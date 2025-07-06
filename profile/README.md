@@ -1,5 +1,9 @@
 # LISA Project – Dropper and Agent System
 
+## Description 
+
+LISA is a system that simulates realistic user behavior within an isolated training infrastructure of a cyber range. The purpose of the system is to create a background of "peaceful" activity that enables conducting detection and incident analysis training in conditions close to real ones. 
+
 ## Usage
 
 Our project consists of multi-platform droppers that inject Linux and Windows agents into live processes using advanced techniques.
