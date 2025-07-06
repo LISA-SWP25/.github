@@ -109,11 +109,8 @@ The system consists of:
 
 Coupling between droppers and agents is minimal. Components are loosely coupled to enhance maintainability.
 
-UML Component Diagram: [docs/architecture/static-view/component-diagram.png]
-
-### Dynamic View
-
-UML Sequence Diagram: [docs/architecture/dynamic-view/sequence-diagram.png]
+UML Component Diagram: 
+![LISA_pipeline_windows-2](https://github.com/user-attachments/assets/c012dc2c-b805-4d3d-a95b-58511030642f)
 
 #### Example Scenario:
 
@@ -126,8 +123,9 @@ UML Sequence Diagram: [docs/architecture/dynamic-view/sequence-diagram.png]
 Execution time in production: \~3-5 seconds per injection.
 
 ### Deployment View
+Deployment Diagram: 
+<img width="742" alt="Снимок экрана 2025-07-06 в 18 14 44" src="https://github.com/user-attachments/assets/5eecfd2d-0691-4fe5-b952-b5a7de80ff37" />
 
-Deployment Diagram: [docs/architecture/deployment-view/deployment-diagram.png]
 
 - Backend is deployed on a cloud server.
 - Droppers are distributed to client machines.
