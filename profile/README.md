@@ -151,9 +151,3 @@ Deployment Diagram:
 - Modular components.
 - Well-documented Git workflow.
 - Clean branching and merging strategy.
-
-### Quality Scenarios
-
-All quality scenarios are documented in:\
-[docs/quality/quality-scenarios.md]
-
