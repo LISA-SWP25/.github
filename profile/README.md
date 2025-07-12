@@ -159,3 +159,7 @@ Deployment Diagram:
 - Modular components.
 - Well-documented Git workflow.
 - Clean branching and merging strategy.
+
+## License
+
+The LISA source and documentation are released under the [MIT License](LICENSE)
