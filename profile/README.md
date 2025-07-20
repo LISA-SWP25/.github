@@ -4,23 +4,76 @@
 
 LISA is a system that simulates realistic user behavior within an isolated training infrastructure of a cyber range. The purpose of the system is to create a background of "peaceful" activity that enables conducting detection and incident analysis training in conditions close to real ones. 
 
+## System Requirements and Setup (for customer)
+
+This section is crucial for customers as it ensures proper deployment and functionality of LISA within your cyber range environment. Understanding these requirements prevents compatibility issues and ensures optimal performance during security training exercises.
+
+### Prerequisites
+
+Before deploying LISA in your training infrastructure, ensure the following components are available:
+
+#### Operating System Support
+- **Linux**: Ubuntu 18.04+, CentOS 7+, or equivalent distributions
+- **Windows**: Windows 10/11, Windows Server 2016+
+- **Architecture**: x86_64 (64-bit) required for both platforms
+
+#### System Resources
+- **RAM**: Minimum 4GB, recommended 8GB+ for concurrent agent operations
+- **Storage**: 2GB free space for droppers, agents, and temporary files
+- **Network**: SSH access (port 22) and HTTP/HTTPS connectivity for remote deployment
+
+#### Software Dependencies
+```bash 
+sudo apt install openssh-server python3 python3-pip docker.io
+pip3 install nuitka
+```
+
+## Security and Compliance Considerations (for customer)
+
+This section is essential for customers to understand the security implications of LISA's memory injection techniques and ensure compliance with organizational security policies and legal requirements during training scenarios.
+
+### Security Architecture
+
+#### Memory-Only Operations
+- **No Disk Footprint**: Agents operate entirely in memory to minimize detection
+- **Process Masquerading**: Agents disguise themselves within legitimate processes
+- **Graceful Termination**: All components clean up properly after execution
+
+#### Access Control Requirements
+``` sudo usermod -aG docker $USER
+chmod +x dropper.bin
+```
+
+
+### Compliance Guidelines
+
+#### Legal Considerations
+- **Training Environment Only**: LISA must only be used in isolated cyber range environments
+- **Written Authorization**: Ensure proper documentation for all deployment activities
+- **Data Protection**: No sensitive data should be processed during simulations
+
+#### Security Boundaries
+- **Network Isolation**: Deploy within segregated training networks
+- **Monitoring**: Enable logging for all dropper and agent activities
+- **Time Limits**: Set maximum execution times for training scenarios
+
+#### Monitor injection activities
+
+``` tail -f /var/log/lisa/dropper.log
+tail -f /var/log/lisa/agent.log
+```
+
+### Risk Mitigation
+- **Sandboxing**: Use containerized environments where possible
+- **Regular Updates**: Keep all components updated to latest versions
+- **Incident Response**: Have procedures ready for unexpected behavior
+- **Backup and Recovery**: Maintain system backups before training exercises
+
+---
+
 ## Usage
 
 Our project consists of multi-platform droppers that inject Linux and Windows agents into live processes using advanced techniques.
-
-## Demo Video
-[Click](https://drive.google.com/file/d/14FUOun8V-tnNoL-vgpEvS4-wH01-xJqU/view?usp=drive_link)
-
-
-### Running the Linux Dropper:
-
-1. Build the agent using `build_script.sh` provided by the agent team.
-2. Convert the agent to shellcode using **donut** or compile it using **Nuitka --standalone**.
-3. Run the dropper and provide the target process name and payload:
-
-```bash
-sudo ./dropper bash agent.bin
-```
 
 ### Access Instructions:
 
